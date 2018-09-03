@@ -40,4 +40,23 @@ public class Constants {
     public static final String CURRENT_PAGE = "current_page";
 
     public static final String PROJECT_CURRENT_PAGE = "project_current_page";
+
+    /**
+     * Intent params
+     */
+    public static final String ARG_PARAM1 = "param1";
+
+    public static final String ARG_PARAM2 = "param2";
+
+    /**
+     * Tag fragment classify
+     */
+    public static final int TYPE_HOME = 0;
+
+    public static final int TYPE_CATEGORY = 1;
+
+    public static final int TYPE_DISCOVERY = 2;
+
+    public static final int TYPE_MINE = 3;
+
 }

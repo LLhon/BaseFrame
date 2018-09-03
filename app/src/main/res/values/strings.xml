@@ -3,4 +3,9 @@
 
   <string name="double_click_exit_tint">再按一次后退键退出app</string>
 
+  <string name="tab_home">首页</string>
+  <string name="tab_category">分类</string>
+  <string name="tab_discovery">发现</string>
+  <string name="tab_mine">我的</string>
+
 </resources>
