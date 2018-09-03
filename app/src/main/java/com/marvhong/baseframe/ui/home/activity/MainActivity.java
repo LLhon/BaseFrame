@@ -6,6 +6,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
 import android.widget.FrameLayout;
@@ -22,6 +23,7 @@ import com.marvhong.baseframe.ui.discovery.fragment.DiscoveryFragment;
 import com.marvhong.baseframe.ui.home.fragment.HomeFragment;
 import com.marvhong.baseframe.ui.mine.fragment.MineFragment;
 import com.marvhong.baseframe.utils.BottomNavigationViewHelper;
+import com.marvhong.baseframe.utils.StatusBarUtil;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,7 +56,11 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
         ActionBar actionBar = getSupportActionBar();
         assert actionBar != null;
         actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(false);
         mTvToolbarTitle.setText("首页");
+        StatusBarUtil
+            .setStatusColor(getWindow(), ContextCompat.getColor(this, R.color.colorPrimaryDark),
+                1f);
         mToolbar.setNavigationOnClickListener(v -> onBackPressedSupport());
     }
 

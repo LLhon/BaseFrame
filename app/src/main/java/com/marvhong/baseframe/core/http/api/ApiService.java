@@ -9,7 +9,7 @@ package com.marvhong.baseframe.core.http.api;
  */
 public interface ApiService {
 
-    String HOST = "";
+    String HOST = "http://gank.io/api/";
 
 
 }

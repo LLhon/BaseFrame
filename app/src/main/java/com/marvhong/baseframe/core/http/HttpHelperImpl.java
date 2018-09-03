@@ -1,5 +1,6 @@
 package com.marvhong.baseframe.core.http;
 
+import com.marvhong.baseframe.core.http.api.ApiService;
 import javax.inject.Inject;
 
 /**

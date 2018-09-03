@@ -1,7 +1,9 @@
 package com.marvhong.baseframe.di.module;
 
 import com.marvhong.baseframe.di.component.BaseActivityComponent;
+import com.marvhong.baseframe.ui.home.activity.MainActivity;
 import dagger.Module;
+import dagger.android.ContributesAndroidInjector;
 
 /**
  * @author LLhon
@@ -13,4 +15,6 @@ import dagger.Module;
 @Module(subcomponents = {BaseActivityComponent.class})
 public abstract class AbstractAllActivityModule {
 
+    @ContributesAndroidInjector(modules = MainActivityModule.class)
+    abstract MainActivity contriburesMainActivityInjector();
 }

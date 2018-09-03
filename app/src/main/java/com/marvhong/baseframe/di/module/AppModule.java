@@ -5,6 +5,7 @@ import com.marvhong.baseframe.core.DataManager;
 import com.marvhong.baseframe.core.http.HttpHelper;
 import com.marvhong.baseframe.core.http.HttpHelperImpl;
 import com.marvhong.baseframe.core.prefs.PreferenceHelper;
+import com.marvhong.baseframe.core.prefs.PreferenceHelperImpl;
 import dagger.Module;
 import dagger.Provides;
 import javax.inject.Singleton;
@@ -35,6 +36,12 @@ public class AppModule {
     @Singleton
     HttpHelper provideHttpHelper(HttpHelperImpl httpHelper) {
         return httpHelper;
+    }
+
+    @Provides
+    @Singleton
+    PreferenceHelper providePreferenceHelper(PreferenceHelperImpl preferenceHelper) {
+        return preferenceHelper;
     }
 
     @Provides
