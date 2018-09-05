@@ -62,6 +62,10 @@ public abstract class BaseFragment<T extends AbstractPresenter> extends Abstract
     }
 
     @Override
+    public void showEmpty() {
+    }
+
+    @Override
     public void showLoading() {
     }
 

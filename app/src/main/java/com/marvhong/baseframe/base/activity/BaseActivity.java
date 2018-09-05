@@ -71,6 +71,11 @@ public abstract class BaseActivity<T extends AbstractPresenter> extends Abstract
     }
 
     @Override
+    public void showEmpty() {
+
+    }
+
+    @Override
     public void showLoading() {
 
     }
