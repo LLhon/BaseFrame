@@ -8,4 +8,7 @@
   <string name="tab_discovery">发现</string>
   <string name="tab_mine">我的</string>
 
+  <string name="http_error">网络异常</string>
+  <string name="unknown_error">未知错误</string>
+
 </resources>

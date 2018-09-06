@@ -3,6 +3,7 @@ package com.marvhong.baseframe.di.component;
 import com.marvhong.baseframe.app.App;
 import com.marvhong.baseframe.core.DataManager;
 import com.marvhong.baseframe.di.module.AbstractAllActivityModule;
+import com.marvhong.baseframe.di.module.AbstractAllDialogFragmentModule;
 import com.marvhong.baseframe.di.module.AbstractAllFragmentModule;
 import com.marvhong.baseframe.di.module.AppModule;
 import com.marvhong.baseframe.di.module.HttpModule;
@@ -23,6 +24,7 @@ import javax.inject.Singleton;
     AndroidSupportInjectionModule.class,
     AbstractAllActivityModule.class,
     AbstractAllFragmentModule.class,
+    AbstractAllDialogFragmentModule.class,
     AppModule.class,
     HttpModule.class})
 public interface AppComponent {

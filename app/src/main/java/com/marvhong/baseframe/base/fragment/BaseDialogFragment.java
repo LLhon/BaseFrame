@@ -1,9 +1,8 @@
 package com.marvhong.baseframe.base.fragment;
 
-import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.View;
 import com.marvhong.baseframe.base.presenter.AbstractPresenter;
 import com.marvhong.baseframe.base.view.AbstractView;
 import com.marvhong.baseframe.utils.UIUtils;
@@ -12,26 +11,25 @@ import javax.inject.Inject;
 
 /**
  * @author LLhon
- * @Project BaseFrame
- * @Package com.marvhong.baseframe.base.fragment
- * @Date 2018/8/30 15:49
- * @description MVP模式的BaseFragment
+ * @project BaseFrame
+ * @date 2018/9/6 14:56
+ * @description MVP模式的BaseDialogFragment
  */
-public abstract class BaseFragment<T extends AbstractPresenter> extends AbstractSimpleFragment implements
-    AbstractView {
+public abstract class BaseDialogFragment<T extends AbstractPresenter> extends AbstractSimpleDialogFragment
+    implements AbstractView {
 
     @Inject
     protected T mPresenter;
 
     @Override
-    public void onAttach(Activity activity) {
+    public void onAttach(Context context) {
+        super.onAttach(context);
         AndroidSupportInjection.inject(this);
-        super.onAttach(activity);
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         if (mPresenter != null) {
             mPresenter.attachView(this);
         }
@@ -48,46 +46,59 @@ public abstract class BaseFragment<T extends AbstractPresenter> extends Abstract
 
     @Override
     public void showErrorMsg(String errorMsg) {
-        if (isAdded()) {
-            UIUtils.showSnackMessage(_mActivity, errorMsg);
+        if (getActivity() != null) {
+            UIUtils.showSnackMessage(getActivity(), errorMsg);
         }
     }
 
     @Override
     public void showNormal() {
-    }
 
-    @Override
-    public void showError() {
     }
 
     @Override
     public void showEmpty() {
+
+    }
+
+    @Override
+    public void showError() {
+
     }
 
     @Override
     public void showLoading() {
+
     }
 
     @Override
     public void reload() {
+
     }
 
     @Override
     public void showLoginView() {
+
     }
 
     @Override
     public void showLogoutView() {
+
     }
 
     @Override
     public void showToast(String message) {
-        UIUtils.showMessage(_mActivity, message);
+        if (getActivity() == null) {
+            return;
+        }
+        UIUtils.showMessage(getActivity(), message);
     }
 
     @Override
     public void showSnackBar(String message) {
-        UIUtils.showSnackMessage(_mActivity, message);
+        if (getActivity() == null) {
+            return;
+        }
+        UIUtils.showSnackMessage(getActivity(), message);
     }
 }

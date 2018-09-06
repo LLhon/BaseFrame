@@ -19,7 +19,7 @@ public class Constants {
     public static final String COOKIE = "Cookie";
 
     /**
-     * Path
+     * Acache Path
      */
     public static final String PATH_DATA =
         App.getInstance().getCacheDir().getAbsolutePath() + File.separator + "data";
