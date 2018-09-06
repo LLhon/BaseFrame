@@ -82,8 +82,7 @@ dependencies {
     implementation rootProject.ext.dependencies["retrofit"]
     implementation rootProject.ext.dependencies["converter-gson"]
     implementation rootProject.ext.dependencies["adapter-rxjava2"]
-    implementation rootProject.ext.dependencies["glide"]
-    annotationProcessor rootProject.ext.dependencies["glide_compiler"]
+    implementation rootProject.ext.dependencies["glideimageview"]
 
     //rx
     implementation rootProject.ext.dependencies["rxjava"]
